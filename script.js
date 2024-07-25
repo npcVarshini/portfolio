@@ -50,40 +50,33 @@ function handleFormSubmit(event) {
     const email = document.getElementById('email').value.trim();
     const comments = document.getElementById('comments').value.trim();
 
-    // Simple validation for name (non-empty)
     if (name === '') {
         alert('Please enter your name.');
         return;
     }
 
-    // Email validation using regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert('Please enter a valid email address.');
         return;
     }
 
-    // Simple validation for comments (non-empty)
     if (comments === '') {
         alert('Please enter your comments.');
         return;
     }
 
-    // If all validations pass, proceed to handle form submission
     console.log(`Name: ${name}`);
     console.log(`Email: ${email}`);
     console.log(`Comments: ${comments}`);
 
-    // Clear form fields after submission
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
     document.getElementById('comments').value = '';
 
-    // Optionally, you can send data to a server or perform other actions
 }
 
 
-// Add event listener for form submission
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', handleFormSubmit);
 function toggleContactForm() {
